@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap"> <!-- Rubik Font -->
+    <style>
+        @font-face {
+            font-family: 'Azonix';
+            src: url('fonts/Azonix.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Audrey';
+            src: url('fonts/Audrey-Normal.otf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Cormorant';
+            src: url('fonts/cormorant.ttf') format('truetype');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'visbycf';
+            src: url('fonts/visbycf.otf') format('truetype')
+        } 
+        body {
+            font-family: Verdana, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/bggg.png'); /* Path to your background image */
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Cover the entire viewport */
+            color: #fff; /* Change the color to white */
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 5px;
+            font-family: 'Azonix', sans-serif; /* Applying Azonix font */
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            transition: width 0.3s;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 0;
+            color: #fff;
+            background: none; /* Ensure no background color */
+            border: none; /* Ensure no border */
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out; /* Smooth enlarge effect */
+        }
+        .profile-pic:hover {
+            transform: scale(1.1); /* Enlarge the image on hover */
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .intro-text {
+            flex-grow: 1;
+        }
+        .intro-text h1 {
+            font-size: 5em;
+            margin: 0 0 10px;
+            font-family: 'visbycf', serif; /* Applying Visby CF font */
+            font-weight: 700; /* Increase font weight */
+            color: #fff;
+        }
+        .intro-text p {
+            font-size: 1.2em;
+            margin: 0;
+            color: #fff;
+        }
+        section {
+            margin-bottom: 60px; /* Adding gap between sections */
+        }
+        h2 {
+            font-size: 2.5em;
+            font-family: Verdana, Tahoma, sans-serif; /* Applying Times New Roman font */
+            margin-top: 0;
+            color: #fff; /* Change the color to white */
+        }
+        .about-heading {
+            font-family: 'Audrey', sans-serif; 
+        }
+        .about-text {
+            font-family: 'arial', sans-serif; 
+            font-size: 1.4em;
+            line-height: 1.4;
+            color: #fff;
+        }
+        .portfolio-heading {
+            font-family: 'Audrey', sans-serif; 
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-info .instagram-logo {
+            width: 40px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .contact-info a {
+            color: #fff; /* Ensure the email is white */
+            text-decoration: none;
+            font-weight: bold;
+            /* font-family: 'Rubik', sans-serif;  */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .contact-info span {
+            margin: 0 10px;
+            color: #fff; /* Ensure the span is white */
+        }
+        .contact-section {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center; /* Center the contact heading */
+            background-color: #fff; /* White background for the contact section */
+            color: #000; /* Black text color */
+            padding: 50px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-section h2 {
+            font-family: 'Audrey', sans-serif;
+            color: #000; /* Black text color */
+        }
+        .contact-section p {
+            font-family: 'Audrey', sans-serif;
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+            color: #555; /* Slightly gray color for the subtitle */
+        }
+        .contact-section .contact-info p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-section form input,
+        .contact-section form textarea {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-section form button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .contact-section form button:hover {
+            background-color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .project {
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .project p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+        .project a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .project a:hover {
+            background-color: #ccc;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+        }
+        .modal-content img {
+            border-radius: 50%;
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <section id="home" class="intro">
+            <div class="profile-pic" id="profile-pic">
+                <img src="images/daksh.jpg" alt="Your Name">
+            </div>
+            <div class="intro-text">
+                <h1>Daksh</h1>
+                <p>I'm a student passionate about tennis, badminton, cricket, and horror movies.</p>
+            </div>
+        </section>
+        <section id="about">
+            <h2 class="about-heading">ABOUT</h2>
+            <p class="about-text">Hi, I'm Daksh, a 17-year-old student excited to be moving into college this year. I was born on November 1st, and I have a passion for sports and movies. I enjoy playing tennis, badminton, and cricket, and I find these activities a great way to stay active and have fun. In my free time, I love watching horror movies, always on the lookout for the next thrilling story to enjoy. I'm looking forward to the new experiences and challenges that college life will bring.</p>
+        </section>
+        <section id="portfolio">
+            <h2 class="portfolio-heading">PORTFOLIO</h2>
+            <!-- New project section -->
+            <div class="project">
+                <p>
+                    Developed a dynamic and responsive band website with interactive elements and a seamless user experience using HTML, CSS, and JavaScript.
+                </p>
+                <a href="path/to/your/project" target="_blank">View Project</a>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2 font-family: Audrey >CONTACT</h2>
+            <div class="contact-info">
+                <p>Delhi, IND<br>Phone: +91 151515<br>Email: dakshtyagi2006@gmail.com</p>
+            </div>
+            <form>
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Daksh. All rights reserved.</p>
+    </footer>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img src="images/daksh.jpg" alt="Your Name">
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal
+        var img = document.getElementById("profile-pic");
+        var modalImg = modal.getElementsByTagName("img")[0];
+
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.getElementsByTagName("img")[0].src;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script src="scripts/main1.js"></script>
+</body>
+</html>
