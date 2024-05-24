@@ -152,75 +152,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .contact-info .instagram-logo {
-            width: 40px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .contact-info span {
-            margin: 0 10px;
-            color: #fff;
-        }
-        .contact-section {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
+            flex-direction: column;
             background-color: #fff;
             color: #000;
-            padding: 50px 20px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
         }
-        .contact-section h2 {
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .contact-heading {
             font-family: 'Audrey', sans-serif;
             color: #000;
-        }
-        .contact-section p {
-            font-family: 'Audrey', sans-serif;
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-            color: #555;
-        }
-        .contact-section .contact-info p {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1em;
-            margin-bottom: 30px;
-        }
-        .contact-section form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        .contact-section form input,
-        .contact-section form textarea {
-            width: 300px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .contact-section form button {
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .contact-section form button:hover {
-            background-color: #333;
+            text-align: center;
+            margin-bottom: 20px;
         }
         footer {
             text-align: center;
@@ -318,9 +266,9 @@
             nav ul li {
                 margin: 5px;
             }
-            .contact-section form input,
-            .contact-section form textarea {
-                width: 100%;
+            .contact-info {
+                width: 90%;
+                padding: 20px;
             }
         }
     </style>
@@ -367,17 +315,11 @@
                 <a href="https://telegram.me/vicinocafe_bot" target="_blank">View Project</a>
             </div>
         </section>
-        <section id="contact" class="contact-section">
-            <h2 font-family: Audrey >CONTACT</h2>
-            <div class="contact-info">
-                <p>Delhi, IND<br>Phone: +91 151515<br>Email: dakshtyagi2006@gmail.com</p>
-            </div>
-            <form>
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email">
-                <textarea name="message" placeholder="Message"></textarea>
-                <button type="submit">Send</button>
-            </form>
+        <section id="contact" class="contact-info">
+            <h2 class="contact-heading">CONTACT</h2>
+            <p>Delhi, IND</p>
+            <p>Phone: +91 151515</p>
+            <p>Email: dakshtyagi2006@gmail.com</p>
         </section>
     </div>
     <footer>
